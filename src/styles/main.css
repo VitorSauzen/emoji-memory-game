@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ff00ff;
+    user-select: none;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(325deg,
+    #03001e 0%,
+    #7303c0 30%,
+    #ec38bc 70%,
+    #fdeff9 100%
+    );
+    padding: 2rem 3rem;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.reset {
+    padding: 1rem 1.5rem;
+    width: 100%;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.reset:hover {
+    background-color: #ddd;
+}
+
+.reset:focus {
+    color: #ec38bc;
+    background-color: #bbb;
+}
+
+.game {
+    width: 30rem;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    transform-style: preserve-3d;
+    perspective: 30rem;
+}
+
+.item {
+    position: relative;
+    width: 5.5rem;
+    height: 5.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    
+    font-size: 2.6em;
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #555;
+    transition: 0.4s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.cardOpen {
+    transform: rotateY(0deg);
+}
+
+.cardOpen::after, .cardMatch::after {
+    transform: rotateY(180deg);
+}
+
+span {
+    color: #fff;
+}
